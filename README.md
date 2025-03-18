@@ -99,3 +99,9 @@ O Zephyr mostrou-se uma plataforma robusta e flexível para desenvolvimento de s
 - Repositório `example-application`: [https://github.com/zephyrproject-rtos/example-application](https://github.com/zephyrproject-rtos/example-application)
 
 ---
+
+## Print do Projeto em Funcionamento
+
+![Captura de Tela do Projeto](images/Build.PNG)
+---
+![Captura de Tela do Projeto](images/Run.PNG)
