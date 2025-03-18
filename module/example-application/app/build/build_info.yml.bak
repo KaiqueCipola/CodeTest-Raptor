@@ -1,0 +1,4 @@
+west:
+  command: C:\Users\finan\my-workspace\.venv\Scripts\west build -b qemu_x86
+  topdir: C:\Users\finan\my-workspace
+  version: 1.3.0
