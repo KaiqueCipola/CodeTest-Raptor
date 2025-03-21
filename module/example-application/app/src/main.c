@@ -24,7 +24,7 @@ void display_raptor_logo(void) {
 }
 
 int main() {
-    printk ("Hello Word! This is Raptor");
+    printk ("Hello World! This is Raptor");
     display_raptor_logo();
 
     return 0;
