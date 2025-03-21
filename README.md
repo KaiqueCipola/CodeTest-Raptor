@@ -105,3 +105,6 @@ O Zephyr mostrou-se uma plataforma robusta e flexível para desenvolvimento de s
 ![Captura de Tela do Projeto](images/Build.PNG)
 ---
 ![Captura de Tela do Projeto](images/Run.PNG)
+---
+![Captura de Tela do Projeto](images/logo.png)
+
