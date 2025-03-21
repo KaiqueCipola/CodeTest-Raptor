@@ -1,16 +1,16 @@
-menu "example-application (C:/Users/finan/my-workspace/example-application)"
-osource "C:/Users/finan/my-workspace/example-application/Kconfig"
+menu "example-application (/Users/kaiquecipola/my-workspace/example-application)"
+osource "/Users/kaiquecipola/my-workspace/example-application/Kconfig"
 config ZEPHYR_EXAMPLE_APPLICATION_MODULE
 	bool
 	default y
 endmenu
-menu "cmsis (C:/Users/finan/my-workspace/modules/hal/cmsis)"
+menu "cmsis (/Users/kaiquecipola/my-workspace/modules/hal/cmsis)"
 osource "$(ZEPHYR_CMSIS_KCONFIG)"
 config ZEPHYR_CMSIS_MODULE
 	bool
 	default y
 endmenu
-menu "hal_nordic (C:/Users/finan/my-workspace/modules/hal/nordic)"
+menu "hal_nordic (/Users/kaiquecipola/my-workspace/modules/hal/nordic)"
 osource "$(ZEPHYR_HAL_NORDIC_KCONFIG)"
 config ZEPHYR_HAL_NORDIC_MODULE
 	bool

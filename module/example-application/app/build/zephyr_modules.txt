@@ -1,4 +1,4 @@
-"example-application":"C:/Users/finan/my-workspace/example-application":"C:/Users/finan/my-workspace/example-application"
-"cmsis":"C:/Users/finan/my-workspace/modules/hal/cmsis":"${ZEPHYR_CMSIS_CMAKE_DIR}"
-"hal_nordic":"C:/Users/finan/my-workspace/modules/hal/nordic":"${ZEPHYR_HAL_NORDIC_CMAKE_DIR}"
-"hal_stm32":"C:/Users/finan/my-workspace/modules/hal/stm32":"C:/Users/finan/my-workspace/modules/hal/stm32"
+"example-application":"/Users/kaiquecipola/my-workspace/example-application":"/Users/kaiquecipola/my-workspace/example-application"
+"cmsis":"/Users/kaiquecipola/my-workspace/modules/hal/cmsis":"${ZEPHYR_CMSIS_CMAKE_DIR}"
+"hal_nordic":"/Users/kaiquecipola/my-workspace/modules/hal/nordic":"${ZEPHYR_HAL_NORDIC_CMAKE_DIR}"
+"hal_stm32":"/Users/kaiquecipola/my-workspace/modules/hal/stm32":"/Users/kaiquecipola/my-workspace/modules/hal/stm32"

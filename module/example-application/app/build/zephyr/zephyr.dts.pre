@@ -1,220 +1,239 @@
-# 0 "C:/Users/finan/my-workspace/zephyr/misc/empty_file.c"
+# 0 "/Users/kaiquecipola/my-workspace/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86.dts" 1
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/boards/qemu/cortex_a53/qemu_cortex_a53.dts" 1
+
+
+
+
 
 
 
 /dts-v1/;
-
-# 1 "C:/Users/finan/my-workspace/zephyr/dts/common/mem.h" 1 3 4
-# 7 "C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86.dts" 2
-# 16 "C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86.dts"
-# 1 "C:/Users/finan/my-workspace/zephyr/dts/x86/intel/atom.dtsi" 1 3 4
-
-
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/qemu/qemu-virt-a53.dtsi" 1 3 4
+# 16 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/qemu/qemu-virt-a53.dtsi" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/dts/common/mem.h" 1 3 4
+# 17 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/qemu/qemu-virt-a53.dtsi" 2 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/armv8-a.dtsi" 1 3 4
 
 
 
 
-# 1 "C:/Users/finan/my-workspace/zephyr/dts/common/skeleton.dtsi" 1 3 4
-# 9 "C:/Users/finan/my-workspace/zephyr/dts/common/skeleton.dtsi" 3 4
+
+
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "/Users/kaiquecipola/my-workspace/zephyr/dts/common/skeleton.dtsi" 3 4
 / {
  #address-cells = <1>;
  #size-cells = <1>;
  chosen { };
  aliases { };
 };
-# 8 "C:/Users/finan/my-workspace/zephyr/dts/x86/intel/atom.dtsi" 2 3 4
-# 1 "C:/Users/finan/my-workspace/zephyr/include/zephyr/dt-bindings/interrupt-controller/intel-ioapic.h" 1 3 4
-# 9 "C:/Users/finan/my-workspace/zephyr/dts/x86/intel/atom.dtsi" 2 3 4
+# 8 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/armv8-a.dtsi" 2 3 4
 
 / {
- cpus {
-  #address-cells = <1>;
-  #size-cells = <0>;
-
-  cpu: cpu@0 {
-   device_type = "cpu";
-   d-cache-line-size = <64>;
-   reg = <0>;
-  };
-
- };
-
- intc: ioapic@fec00000 {
-  compatible = "intel,ioapic";
-  #address-cells = <1>;
-  #interrupt-cells = <3>;
-  reg = <0xfec00000 0x1000>;
-  interrupt-controller;
- };
-
- intc_loapic: loapic@fee00000 {
-  compatible = "intel,loapic";
-  reg = <0xfee00000 0x1000>;
-  interrupt-controller;
-  #interrupt-cells = <3>;
-  #address-cells = <1>;
- };
-
- dram0: memory@0 {
-  device_type = "memory";
-  reg = <0x0 (((32) * 1024) * 1024)>;
- };
-
  soc {
   #address-cells = <1>;
   #size-cells = <1>;
   compatible = "simple-bus";
   ranges;
-
-  uart0: uart@3f8 {
-   compatible = "ns16550";
-   reg = <0x000003f8 0x100>;
-   io-mapped;
-   clock-frequency = <1843200>;
-   interrupts = <4 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-   reg-shift = <0>;
-   status = "disabled";
-  };
-
-  uart1: uart@2f8 {
-   compatible = "ns16550";
-   reg = <0x000002f8 0x100>;
-   io-mapped;
-   clock-frequency = <1843200>;
-   interrupts = <3 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-   reg-shift = <0>;
-   status = "disabled";
-  };
-
-  hpet: hpet@fed00000 {
-   compatible = "intel,hpet";
-   reg = <0xfed00000 0x400>;
-   interrupts = <2 (0x00000000 | 0x00000000 | 0x00000000) 4>;
-   interrupt-parent = <&intc>;
-
-   status = "disabled";
-  };
-
-  rtc: counter: rtc@70 {
-   compatible = "motorola,mc146818";
-   reg = <0x70 0x0D 0x71 0x0D>;
-   interrupts = <8 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-   alarms-count = <1>;
-
-   status = "okay";
-  };
-
  };
 };
-# 17 "C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86.dts" 2
-# 1 "C:/Users/finan/my-workspace/zephyr/include/zephyr/dt-bindings/pcie/pcie.h" 1 3 4
-# 18 "C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86.dts" 2
+# 18 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/qemu/qemu-virt-a53.dtsi" 2 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/interrupt-controller/arm-gic.h" 1 3 4
+# 9 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/interrupt-controller/arm-gic.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
+# 19 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
+# 34 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_macro.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
+# 18 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
+# 1083 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_loops.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
+# 1084 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
+# 19 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 162 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
+# 163 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 193 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
+# 194 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+
+
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
+# 197 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+
+
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
+# 200 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 35 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
+# 20 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
+# 10 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/interrupt-controller/arm-gic.h" 2 3 4
+# 19 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/qemu/qemu-virt-a53.dtsi" 2 3 4
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/include/zephyr/dt-bindings/pcie/pcie.h" 1 3 4
+# 20 "/Users/kaiquecipola/my-workspace/zephyr/dts/arm64/qemu/qemu-virt-a53.dtsi" 2 3 4
 
 / {
- model = "QEMU X86 emulator";
- compatible = "qemu,x86_emulator";
+ #address-cells = <2>;
+ #size-cells = <2>;
 
- flash0: flash@500000 {
-  compatible = "soc-nv-flash";
-  reg = <0x00500000 ((4096) * 1024)>;
- };
-
- aliases {
-  uart-0 = &uart0;
-  uart-1 = &uart1;
-  eeprom-0 = &eeprom0;
-  eeprom-1 = &eeprom1;
-  rtc = &rtc;
- };
-
- chosen {
-  zephyr,sram = &dram0;
-  zephyr,flash = &flash0;
-  zephyr,console = &uart0;
-  zephyr,bt-hci = &bt_hci_uart;
-  zephyr,shell-uart = &uart0;
-  zephyr,uart-pipe = &uart1;
-  zephyr,bt-mon-uart = &uart1;
-  zephyr,code-partition = &slot0_partition;
-  zephyr,flash-controller = &sim_flash;
-  zephyr,ieee802154 = &ieee802154;
-  zephyr,canbus = &can0;
- };
-
- pcie0: pcie0 {
+ cpus {
   #address-cells = <1>;
-  #size-cells = <1>;
-  compatible = "pcie-controller";
-  acpi-hid = "PNP0A08";
+  #size-cells = <0>;
+
+  cpu@0 {
+   device_type = "cpu";
+   compatible = "arm,cortex-a53";
+   reg = <0>;
+  };
+
+  cpu@1 {
+   device_type = "cpu";
+   compatible = "arm,cortex-a53";
+   reg = <1>;
+  };
+ };
+
+ timer {
+  compatible = "arm,armv8-timer";
+  interrupt-parent = <&gic>;
+  interrupts = <0x1 13 (1UL << (1))
+         0xa0>,
+        <0x1 14 (1UL << (1))
+         0xa0>,
+        <0x1 11 (1UL << (1))
+         0xa0>,
+        <0x1 10 (1UL << (1))
+         0xa0>;
+ };
+
+ uartclk: apb-pclk {
+  compatible = "fixed-clock";
+  clock-frequency = <24000000>;
+  #clock-cells = <0>;
+ };
+
+ soc {
+  #address-cells = <2>;
+  #size-cells = <2>;
   ranges;
 
-  can0: can0 {
-   compatible = "kvaser,pcican";
-   status = "okay";
-   vendor-id = <0x10e8>;
-   device-id = <0x8406>;
-   interrupts = <11 (0x00000100 | 0x00008000 | 0x00002000) 3>;
-   interrupt-parent = <&intc>;
+  interrupt-parent = <&gic>;
 
-   can-transceiver {
-    max-bitrate = <1000000>;
+  gic: interrupt-controller@8000000 {
+   compatible = "arm,gic-v3", "arm,gic";
+   reg = <0x00 0x8000000 0x00 0x010000>,
+         <0x00 0x80a0000 0x00 0xf60000>;
+   interrupt-controller;
+   #interrupt-cells = <4>;
+   status = "okay";
+   #size-cells = <0x02>;
+   #address-cells = <0x02>;
+
+   its: its@8080000 {
+    compatible = "arm,gic-v3-its";
+    reg = <0x00 0x8080000 0x00 0x20000>;
+    msi-controller;
    };
   };
 
-  eth0: eth0 {
-   compatible = "intel,e1000";
+  uart0: uart@9000000 {
+   compatible = "arm,pl011";
+   reg = <0x00 0x9000000 0x00 0x1000>;
+   status = "disabled";
+   interrupts = <0x0 1 (1UL << (1)) 0>;
+   interrupt-names = "irq_0";
+   clocks = <&uartclk>;
+  };
 
-   vendor-id = <0x8086>;
-   device-id = <0x100e>;
+  flash0: flash@0 {
+   compatible = "cfi-flash";
+   bank-width = <4>;
 
-   interrupts = <11 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
 
-   status = "okay";
+
+
+   reg = <0x0 0x0 0x0 (((64) * 1024) * 1024) >;
+  };
+
+  pcie: pcie@4010000000 {
+   compatible = "pci-host-ecam-generic";
+   device_type = "pci";
+   reg = <0x40 0x10000000 0x00 0x10000000>;
+   #size-cells = <0x02>;
+   #address-cells = <0x03>;
+   ranges = <0x1000000 0x00 0x00 0x00 0x3eff0000 0x00 0x10000
+      0x2000000 0x00 0x10000000 0x00 0x10000000 0x00 0x2eff0000
+      0x3000000 0x80 0x00 0x80 0x00 0x80 0x00>;
+   #interrupt-cells = <0x01>;
+   interrupt-map-mask = <0x1800 0x00 0x00 0x07>;
+   interrupt-map = <0x00 0x00 0x00 1 &gic 0 0 0x0
+      0x03 (1UL << (2)) 0xa0
+      0x00 0x00 0x00 2 &gic 0 0 0x0
+      0x04 (1UL << (2)) 0xa0
+      0x00 0x00 0x00 3 &gic 0 0 0x0
+      0x05 (1UL << (2)) 0xa0
+      0x00 0x00 0x00 4 &gic 0 0 0x0
+      0x06 (1UL << (2)) 0xa0
+
+      0x800 0x00 0x00 1 &gic 0 0 0x0
+      0x04 (1UL << (2)) 0xa0
+      0x800 0x00 0x00 2 &gic 0 0 0x0
+      0x05 (1UL << (2)) 0xa0
+      0x800 0x00 0x00 3 &gic 0 0 0x0
+      0x06 (1UL << (2)) 0xa0
+      0x800 0x00 0x00 4 &gic 0 0 0x0
+      0x03 (1UL << (2)) 0xa0
+
+      0x1000 0x00 0x00 1 &gic 0 0 0x0
+      0x05 (1UL << (2)) 0xa0
+      0x1000 0x00 0x00 2 &gic 0 0 0x0
+      0x06 (1UL << (2)) 0xa0
+      0x1000 0x00 0x00 3 &gic 0 0 0x0
+      0x03 (1UL << (2)) 0xa0
+      0x1000 0x00 0x00 4 &gic 0 0 0x0
+      0x04 (1UL << (2)) 0xa0
+
+      0x1800 0x00 0x00 1 &gic 0 0 0x0
+      0x06 (1UL << (2)) 0xa0
+      0x1800 0x00 0x00 2 &gic 0 0 0x0
+      0x03 (1UL << (2)) 0xa0
+      0x1800 0x00 0x00 3 &gic 0 0 0x0
+      0x04 (1UL << (2)) 0xa0
+      0x1800 0x00 0x00 4 &gic 0 0 0x0
+      0x05 (1UL << (2)) 0xa0>;
+   msi-parent = <&its>;
+   bus-range = <0x00 0xff>;
   };
  };
+};
+# 10 "/Users/kaiquecipola/my-workspace/zephyr/boards/qemu/cortex_a53/qemu_cortex_a53.dts" 2
 
- sim_flash: sim_flash {
-  compatible = "zephyr,sim-flash";
+/ {
+ model = "QEMU Cortex-A53";
+ compatible = "qemu,arm-cortex-a53";
 
-  #address-cells = <1>;
-  #size-cells = <1>;
-  erase-value = <0xff>;
+ psci {
+  compatible = "arm,psci-0.2";
+  method = "hvc";
+ };
 
-  flash_sim0: flash_sim@0 {
-   compatible = "soc-nv-flash";
-   reg = <0x00000000 ((1024) * 1024)>;
+ chosen {
+  zephyr,sram = &sram0;
+  zephyr,console = &uart0;
+  zephyr,shell-uart = &uart0;
+  zephyr,flash = &flash0;
+  zephyr,pcie-controller = &pcie;
+ };
 
-   erase-block-size = <1024>;
-   write-block-size = <4>;
+ soc {
+  sram0: memory@40000000 {
+   compatible = "mmio-sram";
+   reg = <0x0 0x40000000 0x0 (((128) * 1024) * 1024)>;
   };
- };
 
- eeprom1: eeprom1 {
-  status = "okay";
-  compatible = "zephyr,emu-eeprom";
-  size = <((4) * 1024)>;
-  pagesize = <((8) * 1024)>;
-  partition = <&eepromemu_partition>;
-  rambuf;
  };
-
- eeprom0: eeprom0 {
-  status = "okay";
-  compatible = "zephyr,sim-eeprom";
-  size = <((4) * 1024)>;
- };
-
- ieee802154: ieee802154 {
-  compatible = "zephyr,ieee802154-uart-pipe";
- };
-
 };
 
 &uart0 {
@@ -222,53 +241,16 @@
  current-speed = <115200>;
 };
 
-&uart1 {
- status = "okay";
- current-speed = <115200>;
-
- bt_hci_uart: bt_hci_uart {
-  compatible = "zephyr,bt-hci-uart";
+&pcie {
+ eth0: pcie@1,0 {
+  compatible = "intel,e1000";
+  vendor-id = <0x8086>;
+  device-id = <0x100e>;
+  interrupts = <1>;
+  interrupt-parent = <&pcie>;
+  reg = <0x0800 0 0 0 0>;
   status = "okay";
  };
 };
-
-&hpet {
- status = "okay";
-};
-
-&flash_sim0 {
-
- partitions {
-  compatible = "fixed-partitions";
-  #address-cells = <1>;
-  #size-cells = <1>;
-
-
-
-
-
-  storage_partition: partition@1000 {
-   label = "storage";
-   reg = <0x00001000 0x00010000>;
-  };
-
-  slot0_partition: partition@11000 {
-   label = "image-0";
-   reg = <0x00011000 0x00010000>;
-  };
-  slot1_partition: partition@21000 {
-   label = "image-1";
-   reg = <0x00021000 0x00010000>;
-  };
-  eepromemu_partition: partition@31000 {
-   label = "eeprom-emu";
-   reg = <0x00031000 0x00010000>;
-  };
- };
-};
-
-&cpu {
- compatible = "intel,x86";
-};
 # 0 "<command-line>" 2
-# 1 "C:/Users/finan/my-workspace/zephyr/misc/empty_file.c"
+# 1 "/Users/kaiquecipola/my-workspace/zephyr/misc/empty_file.c"

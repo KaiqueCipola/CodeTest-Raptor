@@ -97,8 +97,8 @@ static inline uint32_t counter_us_to_ticks(const struct device * dev, uint64_t u
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		union { struct { uintptr_t lo, hi; } split; uint64_t val; } parm1 = { .val = us };
-		return (uint32_t) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_COUNTER_US_TO_TICKS);
+		union { uintptr_t x; uint64_t val; } parm1 = { .val = us };
+		return (uint32_t) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_COUNTER_US_TO_TICKS);
 	}
 #endif
 	compiler_barrier();
@@ -119,12 +119,10 @@ __pinned_func
 static inline uint64_t counter_ticks_to_us(const struct device * dev, uint32_t ticks)
 {
 #ifdef CONFIG_USERSPACE
-	uint64_t ret64;
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
 		union { uintptr_t x; uint32_t val; } parm1 = { .val = ticks };
-		(void) arch_syscall_invoke3(parm0.x, parm1.x, (uintptr_t)&ret64, K_SYSCALL_COUNTER_TICKS_TO_US);
-		return (uint64_t) ret64;
+		return (uint64_t) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_COUNTER_TICKS_TO_US);
 	}
 #endif
 	compiler_barrier();

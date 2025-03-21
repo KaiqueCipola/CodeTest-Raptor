@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/finan/my-workspace/zephyr/subsys
+# Install script for directory: /Users/kaiquecipola/my-workspace/zephyr/subsys
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Zephyr-Kernel")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,37 +34,112 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/canbus/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/debug/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/fb/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/fs/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/ipc/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/logging/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/mem_mgmt/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/mgmt/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/modbus/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/pm/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/portability/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/random/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/rtio/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/sd/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/stats/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/storage/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/task_wdt/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/testsuite/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/tracing/cmake_install.cmake")
-  include("C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/usb/cmake_install.cmake")
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/canbus/cmake_install.cmake")
+endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/debug/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/fb/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/fs/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/ipc/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/logging/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/mem_mgmt/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/mgmt/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/modbus/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/pm/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/portability/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/random/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/rtio/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/sd/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/stats/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/storage/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/task_wdt/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/testsuite/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/tracing/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/usb/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/finan/my-workspace/example-application/app/build/zephyr/subsys/install_local_manifest.txt"
+  file(WRITE "/Users/kaiquecipola/my-workspace/example-application/app/build/zephyr/subsys/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

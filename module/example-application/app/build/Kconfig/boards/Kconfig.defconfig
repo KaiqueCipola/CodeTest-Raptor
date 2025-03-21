@@ -1,2 +1,2 @@
 # Load Zephyr board defconfig descriptions.
-osource "C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/Kconfig.defconfig"
+osource "/Users/kaiquecipola/my-workspace/zephyr/boards/qemu/cortex_a53/Kconfig.defconfig"

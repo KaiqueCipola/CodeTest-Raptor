@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe")
+set(CMAKE_C_COMPILER "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-gcc")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "12.2.0")
@@ -22,11 +22,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-ar.exe")
-set(CMAKE_C_COMPILER_AR "C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc-ar.exe")
-set(CMAKE_RANLIB "C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc-ranlib.exe")
-set(CMAKE_LINKER "c:/users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/x86_64-zephyr-elf/bin/ld.bfd.exe")
+set(CMAKE_AR "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-ar")
+set(CMAKE_C_COMPILER_AR "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-gcc-ar")
+set(CMAKE_RANLIB "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-ranlib")
+set(CMAKE_C_COMPILER_RANLIB "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-gcc-ranlib")
+set(CMAKE_LINKER "/Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/aarch64-zephyr-elf/bin/ld.bfd")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_C_COMPILER_LINKER "")

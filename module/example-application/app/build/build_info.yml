@@ -1,50 +1,50 @@
 cmake:
   application:
-    configuration-dir: C:/Users/finan/my-workspace/example-application/app
-    source-dir: C:/Users/finan/my-workspace/example-application/app
+    configuration-dir: /Users/kaiquecipola/my-workspace/example-application/app
+    source-dir: /Users/kaiquecipola/my-workspace/example-application/app
   board:
-    name: qemu_x86
+    name: qemu_cortex_a53
     path:
-     - C:/Users/finan/my-workspace/zephyr/boards/qemu/x86
-    qualifiers: atom
+     - /Users/kaiquecipola/my-workspace/zephyr/boards/qemu/cortex_a53
+    qualifiers: qemu_cortex_a53
     revision: 
   devicetree:
     bindings-dirs:
-     - C:/Users/finan/my-workspace/example-application/dts/bindings
-     - C:/Users/finan/my-workspace/zephyr/dts/bindings
+     - /Users/kaiquecipola/my-workspace/example-application/dts/bindings
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/bindings
     files:
-     - C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86.dts
+     - /Users/kaiquecipola/my-workspace/zephyr/boards/qemu/cortex_a53/qemu_cortex_a53.dts
     include-dirs:
-     - C:/Users/finan/my-workspace/example-application/include
-     - C:/Users/finan/my-workspace/example-application/dts
-     - C:/Users/finan/my-workspace/modules/hal/stm32/dts
-     - C:/Users/finan/my-workspace/zephyr/include
-     - C:/Users/finan/my-workspace/zephyr/include/zephyr
-     - C:/Users/finan/my-workspace/zephyr/dts/common
-     - C:/Users/finan/my-workspace/zephyr/dts/x86
-     - C:/Users/finan/my-workspace/zephyr/dts/xtensa
-     - C:/Users/finan/my-workspace/zephyr/dts/sparc
-     - C:/Users/finan/my-workspace/zephyr/dts/riscv
-     - C:/Users/finan/my-workspace/zephyr/dts/posix
-     - C:/Users/finan/my-workspace/zephyr/dts/nios2
-     - C:/Users/finan/my-workspace/zephyr/dts/arm64
-     - C:/Users/finan/my-workspace/zephyr/dts/arm
-     - C:/Users/finan/my-workspace/zephyr/dts/arc
-     - C:/Users/finan/my-workspace/zephyr/dts
+     - /Users/kaiquecipola/my-workspace/example-application/include
+     - /Users/kaiquecipola/my-workspace/example-application/dts
+     - /Users/kaiquecipola/my-workspace/modules/hal/stm32/dts
+     - /Users/kaiquecipola/my-workspace/zephyr/include
+     - /Users/kaiquecipola/my-workspace/zephyr/include/zephyr
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/common
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/x86
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/xtensa
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/sparc
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/riscv
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/posix
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/nios2
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/arm64
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/arm
+     - /Users/kaiquecipola/my-workspace/zephyr/dts/arc
+     - /Users/kaiquecipola/my-workspace/zephyr/dts
   kconfig:
     files:
-     - C:/Users/finan/my-workspace/zephyr/boards/qemu/x86/qemu_x86_defconfig
-     - C:/Users/finan/my-workspace/example-application/app/prj.conf
+     - /Users/kaiquecipola/my-workspace/zephyr/boards/qemu/cortex_a53/qemu_cortex_a53_defconfig
+     - /Users/kaiquecipola/my-workspace/example-application/app/prj.conf
     user-files:
-     - C:/Users/finan/my-workspace/example-application/app/prj.conf
+     - /Users/kaiquecipola/my-workspace/example-application/app/prj.conf
   toolchain:
     name: zephyr
-    path: C:/Users/finan/zephyr-sdk-0.17.0
+    path: /Users/kaiquecipola/zephyr-sdk-0.17.0
   zephyr:
     version: 4.1.99
-    zephyr-base: C:/Users/finan/my-workspace/zephyr
+    zephyr-base: /Users/kaiquecipola/my-workspace/zephyr
 version: 0.1.0
 west:
-  command: C:\Users\finan\my-workspace\.venv\Scripts\west build -b qemu_x86
-  topdir: C:\Users\finan\my-workspace
+  command: /Users/kaiquecipola/my-workspace/.venv/bin/west build -b qemu_cortex_a53
+  topdir: /Users/kaiquecipola/my-workspace
   version: 1.3.0

@@ -173,8 +173,8 @@ static inline int stepper_set_microstep_interval(const struct device * dev, uint
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		union { struct { uintptr_t lo, hi; } split; uint64_t val; } parm1 = { .val = microstep_interval_ns };
-		return (int) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_STEPPER_SET_MICROSTEP_INTERVAL);
+		union { uintptr_t x; uint64_t val; } parm1 = { .val = microstep_interval_ns };
+		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_STEPPER_SET_MICROSTEP_INTERVAL);
 	}
 #endif
 	compiler_barrier();

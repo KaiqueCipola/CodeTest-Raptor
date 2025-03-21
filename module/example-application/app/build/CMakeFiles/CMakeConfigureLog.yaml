@@ -4,82 +4,128 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
-      The target system is: Generic - 4.1.99 - x86
-      The host system is: Windows - 10.0.19045 - AMD64
+      The target system is: Generic - 4.1.99 - arm64
+      The host system is: Darwin - 24.3.0 - arm64
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:8 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/../lib/gcc/aarch64-zephyr-elf/12.2.0/../../../../aarch64-zephyr-elf/bin/ld: /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/../lib/gcc/aarch64-zephyr-elf/12.2.0/../../../../aarch64-zephyr-elf/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x3c): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe 
-      Build flags: -m32
-      Id flags:  
+      Compiler: /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-gcc 
+      Build flags: 
+      Id flags: -c 
       
       The output was:
       0
-      c:/users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/../lib/gcc/x86_64-zephyr-elf/12.2.0/../../../../x86_64-zephyr-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 0000000008048074
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
       
       The C compiler identification is GNU, found in:
-        C:/Users/finan/my-workspace/example-application/app/build/CMakeFiles/3.31.6/CompilerIdC/a.out
+        /Users/kaiquecipola/my-workspace/example-application/app/build/CMakeFiles/3.31.6/CompilerIdC/CMakeCCompilerId.o
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:8 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/../lib/gcc/aarch64-zephyr-elf/12.2.0/../../../../aarch64-zephyr-elf/bin/ld: /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/../lib/gcc/aarch64-zephyr-elf/12.2.0/../../../../aarch64-zephyr-elf/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x3c): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: C:/Users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc.exe 
-      Build flags: -m32
-      Id flags:  
+      Compiler: /Users/kaiquecipola/zephyr-sdk-0.17.0/aarch64-zephyr-elf/bin/aarch64-zephyr-elf-g++ 
+      Build flags: 
+      Id flags: -c 
       
       The output was:
       0
-      c:/users/finan/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/../lib/gcc/x86_64-zephyr-elf/12.2.0/../../../../x86_64-zephyr-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 0000000008048074
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
       
       The CXX compiler identification is GNU, found in:
-        C:/Users/finan/my-workspace/example-application/app/build/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+        /Users/kaiquecipola/my-workspace/example-application/app/build/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.o
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/kernel.cmake:134 (enable_language)"
-      - "C:/Users/finan/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "C:/Users/finan/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/kernel.cmake:134 (enable_language)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/kaiquecipola/my-workspace/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:8 (find_package)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
-      x86_64-zephyr-elf-gcc.exe (Zephyr SDK 0.17.0) 12.2.0
+      aarch64-zephyr-elf-gcc (Zephyr SDK 0.17.0) 12.2.0
       Copyright (C) 2022 Free Software Foundation, Inc.
       This is free software; see the source for copying conditions.  There is NO
       warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

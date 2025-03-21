@@ -121,18 +121,26 @@
     ],
     [
         [
-            "void sys_rand_get",
-            "void *dst, size_t len"
+            "int sys_cache_data_flush_range",
+            "void *addr, size_t size"
         ],
-        "random.h",
+        "cache.h",
         true
     ],
     [
         [
-            "int sys_csrand_get",
-            "void *dst, size_t len"
+            "int sys_cache_data_invd_range",
+            "void *addr, size_t size"
         ],
-        "random.h",
+        "cache.h",
+        true
+    ],
+    [
+        [
+            "int sys_cache_data_flush_and_invd_range",
+            "void *addr, size_t size"
+        ],
+        "cache.h",
         true
     ],
     [
@@ -1230,30 +1238,6 @@
         ],
         "blink.h",
         true
-    ],
-    [
-        [
-            "int sys_cache_data_flush_range",
-            "void *addr, size_t size"
-        ],
-        "cache.h",
-        false
-    ],
-    [
-        [
-            "int sys_cache_data_invd_range",
-            "void *addr, size_t size"
-        ],
-        "cache.h",
-        false
-    ],
-    [
-        [
-            "int sys_cache_data_flush_and_invd_range",
-            "void *addr, size_t size"
-        ],
-        "cache.h",
-        false
     ],
     [
         [
@@ -4421,6 +4405,22 @@
             "const struct net_socket_service_desc *service,\n\t\t\t\t\t  struct zsock_pollfd *fds, int len, void *user_data"
         ],
         "socket_service.h",
+        false
+    ],
+    [
+        [
+            "void sys_rand_get",
+            "void *dst, size_t len"
+        ],
+        "random.h",
+        false
+    ],
+    [
+        [
+            "int sys_csrand_get",
+            "void *dst, size_t len"
+        ],
+        "random.h",
         false
     ],
     [

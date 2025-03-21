@@ -6,6 +6,6 @@
 # and/or the west manifest file.
 #
 # See the Modules guide for more information.
-"BOARD_ROOT":"C:/Users/finan/my-workspace/example-application"
-"DTS_ROOT":"C:/Users/finan/my-workspace/example-application"
-"DTS_ROOT":"C:/Users/finan/my-workspace/modules/hal/stm32"
+"BOARD_ROOT":"/Users/kaiquecipola/my-workspace/example-application"
+"DTS_ROOT":"/Users/kaiquecipola/my-workspace/example-application"
+"DTS_ROOT":"/Users/kaiquecipola/my-workspace/modules/hal/stm32"

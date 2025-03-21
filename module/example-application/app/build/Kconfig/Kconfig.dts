@@ -7147,6 +7147,11 @@ DT_COMPAT_REALTEK_RTS5912_GPIO := realtek,rts5912-gpio
 config DT_HAS_REALTEK_RTS5912_GPIO_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_REALTEK_RTS5912_GPIO))
 
+DT_COMPAT_REALTEK_RTS5912_KBD := realtek,rts5912-kbd
+
+config DT_HAS_REALTEK_RTS5912_KBD_ENABLED
+	def_bool $(dt_compat_enabled,$(DT_COMPAT_REALTEK_RTS5912_KBD))
+
 DT_COMPAT_REALTEK_RTS5912_PINCTRL := realtek,rts5912-pinctrl
 
 config DT_HAS_REALTEK_RTS5912_PINCTRL_ENABLED
@@ -7437,6 +7442,11 @@ DT_COMPAT_RENESAS_RA_USBPHYC := renesas,ra-usbphyc
 config DT_HAS_RENESAS_RA_USBPHYC_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_RENESAS_RA_USBPHYC))
 
+DT_COMPAT_RENESAS_RA_WDT := renesas,ra-wdt
+
+config DT_HAS_RENESAS_RA_WDT_ENABLED
+	def_bool $(dt_compat_enabled,$(DT_COMPAT_RENESAS_RA_WDT))
+
 DT_COMPAT_RENESAS_RA8_SPI_B := renesas,ra8-spi-b
 
 config DT_HAS_RENESAS_RA8_SPI_B_ENABLED
@@ -7561,6 +7571,11 @@ DT_COMPAT_RENESAS_RZ_SCIF_UART := renesas,rz-scif-uart
 
 config DT_HAS_RENESAS_RZ_SCIF_UART_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_RENESAS_RZ_SCIF_UART))
+
+DT_COMPAT_RENESAS_RZA_PINCTRL := renesas,rza-pinctrl
+
+config DT_HAS_RENESAS_RZA_PINCTRL_ENABLED
+	def_bool $(dt_compat_enabled,$(DT_COMPAT_RENESAS_RZA_PINCTRL))
 
 DT_COMPAT_RENESAS_RZG_PINCTRL := renesas,rzg-pinctrl
 
@@ -9526,6 +9541,11 @@ DT_COMPAT_ST_STM32N6_CPU_CLOCK_MUX := st,stm32n6-cpu-clock-mux
 
 config DT_HAS_ST_STM32N6_CPU_CLOCK_MUX_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_ST_STM32N6_CPU_CLOCK_MUX))
+
+DT_COMPAT_ST_STM32N6_ETHERNET := st,stm32n6-ethernet
+
+config DT_HAS_ST_STM32N6_ETHERNET_ENABLED
+	def_bool $(dt_compat_enabled,$(DT_COMPAT_ST_STM32N6_ETHERNET))
 
 DT_COMPAT_ST_STM32N6_HSE_CLOCK := st,stm32n6-hse-clock
 

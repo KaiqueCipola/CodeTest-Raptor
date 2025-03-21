@@ -69,14 +69,13 @@ static inline k_tid_t k_thread_create(struct k_thread * new_thread, k_thread_sta
 		union { uintptr_t x; void * val; } parm6 = { .val = p3 };
 		union { uintptr_t x; int val; } parm7 = { .val = prio };
 		union { uintptr_t x; uint32_t val; } parm8 = { .val = options };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm9 = { .val = delay };
+		union { uintptr_t x; k_timeout_t val; } parm9 = { .val = delay };
 		uintptr_t more[] = {
 			parm5.x,
 			parm6.x,
 			parm7.x,
 			parm8.x,
-			parm9.split.lo,
-			parm9.split.hi
+			parm9.x
 		};
 		return (k_tid_t) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, (uintptr_t) &more, K_SYSCALL_K_THREAD_CREATE);
 	}
@@ -111,8 +110,8 @@ static inline int k_thread_join(struct k_thread * thread, k_timeout_t timeout)
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_thread * val; } parm0 = { .val = thread };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = timeout };
-		return (int) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_K_THREAD_JOIN);
+		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = timeout };
+		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_K_THREAD_JOIN);
 	}
 #endif
 	compiler_barrier();
@@ -127,8 +126,8 @@ static inline int32_t k_sleep(k_timeout_t timeout)
 {
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm0 = { .val = timeout };
-		return (int32_t) arch_syscall_invoke2(parm0.split.lo, parm0.split.hi, K_SYSCALL_K_SLEEP);
+		union { uintptr_t x; k_timeout_t val; } parm0 = { .val = timeout };
+		return (int32_t) arch_syscall_invoke1(parm0.x, K_SYSCALL_K_SLEEP);
 	}
 #endif
 	compiler_barrier();
@@ -240,11 +239,9 @@ __pinned_func
 static inline k_ticks_t k_thread_timeout_expires_ticks(const struct k_thread * thread)
 {
 #ifdef CONFIG_USERSPACE
-	uint64_t ret64;
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct k_thread * val; } parm0 = { .val = thread };
-		(void) arch_syscall_invoke2(parm0.x, (uintptr_t)&ret64, K_SYSCALL_K_THREAD_TIMEOUT_EXPIRES_TICKS);
-		return (k_ticks_t) ret64;
+		return (k_ticks_t) arch_syscall_invoke1(parm0.x, K_SYSCALL_K_THREAD_TIMEOUT_EXPIRES_TICKS);
 	}
 #endif
 	compiler_barrier();
@@ -258,11 +255,9 @@ __pinned_func
 static inline k_ticks_t k_thread_timeout_remaining_ticks(const struct k_thread * thread)
 {
 #ifdef CONFIG_USERSPACE
-	uint64_t ret64;
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct k_thread * val; } parm0 = { .val = thread };
-		(void) arch_syscall_invoke2(parm0.x, (uintptr_t)&ret64, K_SYSCALL_K_THREAD_TIMEOUT_REMAINING_TICKS);
-		return (k_ticks_t) ret64;
+		return (k_ticks_t) arch_syscall_invoke1(parm0.x, K_SYSCALL_K_THREAD_TIMEOUT_REMAINING_TICKS);
 	}
 #endif
 	compiler_barrier();
@@ -462,9 +457,9 @@ static inline void k_timer_start(struct k_timer * timer, k_timeout_t duration, k
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_timer * val; } parm0 = { .val = timer };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = duration };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = period };
-		(void) arch_syscall_invoke5(parm0.x, parm1.split.lo, parm1.split.hi, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_TIMER_START);
+		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = duration };
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = period };
+		(void) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_TIMER_START);
 		return;
 	}
 #endif
@@ -528,11 +523,9 @@ __pinned_func
 static inline k_ticks_t k_timer_expires_ticks(const struct k_timer * timer)
 {
 #ifdef CONFIG_USERSPACE
-	uint64_t ret64;
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct k_timer * val; } parm0 = { .val = timer };
-		(void) arch_syscall_invoke2(parm0.x, (uintptr_t)&ret64, K_SYSCALL_K_TIMER_EXPIRES_TICKS);
-		return (k_ticks_t) ret64;
+		return (k_ticks_t) arch_syscall_invoke1(parm0.x, K_SYSCALL_K_TIMER_EXPIRES_TICKS);
 	}
 #endif
 	compiler_barrier();
@@ -546,11 +539,9 @@ __pinned_func
 static inline k_ticks_t k_timer_remaining_ticks(const struct k_timer * timer)
 {
 #ifdef CONFIG_USERSPACE
-	uint64_t ret64;
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct k_timer * val; } parm0 = { .val = timer };
-		(void) arch_syscall_invoke2(parm0.x, (uintptr_t)&ret64, K_SYSCALL_K_TIMER_REMAINING_TICKS);
-		return (k_ticks_t) ret64;
+		return (k_ticks_t) arch_syscall_invoke1(parm0.x, K_SYSCALL_K_TIMER_REMAINING_TICKS);
 	}
 #endif
 	compiler_barrier();
@@ -598,10 +589,8 @@ __pinned_func
 static inline int64_t k_uptime_ticks(void)
 {
 #ifdef CONFIG_USERSPACE
-	uint64_t ret64;
 	if (z_syscall_trap()) {
-		(void) arch_syscall_invoke1((uintptr_t)&ret64, K_SYSCALL_K_UPTIME_TICKS);
-		return (int64_t) ret64;
+		return (int64_t) arch_syscall_invoke0(K_SYSCALL_K_UPTIME_TICKS);
 	}
 #endif
 	compiler_barrier();
@@ -685,8 +674,8 @@ static inline void * k_queue_get(struct k_queue * queue, k_timeout_t timeout)
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_queue * val; } parm0 = { .val = queue };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = timeout };
-		return (void *) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_K_QUEUE_GET);
+		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = timeout };
+		return (void *) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_K_QUEUE_GET);
 	}
 #endif
 	compiler_barrier();
@@ -751,8 +740,8 @@ static inline int k_futex_wait(struct k_futex * futex, int expected, k_timeout_t
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_futex * val; } parm0 = { .val = futex };
 		union { uintptr_t x; int val; } parm1 = { .val = expected };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_FUTEX_WAIT);
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_FUTEX_WAIT);
 	}
 #endif
 	compiler_barrier();
@@ -873,8 +862,8 @@ static inline uint32_t k_event_wait(struct k_event * event, uint32_t events, boo
 		union { uintptr_t x; struct k_event * val; } parm0 = { .val = event };
 		union { uintptr_t x; uint32_t val; } parm1 = { .val = events };
 		union { uintptr_t x; bool val; } parm2 = { .val = reset };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
-		return (uint32_t) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, K_SYSCALL_K_EVENT_WAIT);
+		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
+		return (uint32_t) arch_syscall_invoke4(parm0.x, parm1.x, parm2.x, parm3.x, K_SYSCALL_K_EVENT_WAIT);
 	}
 #endif
 	compiler_barrier();
@@ -892,8 +881,8 @@ static inline uint32_t k_event_wait_all(struct k_event * event, uint32_t events,
 		union { uintptr_t x; struct k_event * val; } parm0 = { .val = event };
 		union { uintptr_t x; uint32_t val; } parm1 = { .val = events };
 		union { uintptr_t x; bool val; } parm2 = { .val = reset };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
-		return (uint32_t) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, K_SYSCALL_K_EVENT_WAIT_ALL);
+		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
+		return (uint32_t) arch_syscall_invoke4(parm0.x, parm1.x, parm2.x, parm3.x, K_SYSCALL_K_EVENT_WAIT_ALL);
 	}
 #endif
 	compiler_barrier();
@@ -944,8 +933,8 @@ static inline int k_stack_pop(struct k_stack * stack, stack_data_t * data, k_tim
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_stack * val; } parm0 = { .val = stack };
 		union { uintptr_t x; stack_data_t * val; } parm1 = { .val = data };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_STACK_POP);
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_STACK_POP);
 	}
 #endif
 	compiler_barrier();
@@ -977,8 +966,8 @@ static inline int k_mutex_lock(struct k_mutex * mutex, k_timeout_t timeout)
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_mutex * val; } parm0 = { .val = mutex };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = timeout };
-		return (int) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_K_MUTEX_LOCK);
+		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = timeout };
+		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_K_MUTEX_LOCK);
 	}
 #endif
 	compiler_barrier();
@@ -1059,8 +1048,8 @@ static inline int k_condvar_wait(struct k_condvar * condvar, struct k_mutex * mu
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_condvar * val; } parm0 = { .val = condvar };
 		union { uintptr_t x; struct k_mutex * val; } parm1 = { .val = mutex };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_CONDVAR_WAIT);
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_CONDVAR_WAIT);
 	}
 #endif
 	compiler_barrier();
@@ -1094,8 +1083,8 @@ static inline int k_sem_take(struct k_sem * sem, k_timeout_t timeout)
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_sem * val; } parm0 = { .val = sem };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = timeout };
-		return (int) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_K_SEM_TAKE);
+		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = timeout };
+		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_K_SEM_TAKE);
 	}
 #endif
 	compiler_barrier();
@@ -1180,8 +1169,8 @@ static inline int k_msgq_put(struct k_msgq * msgq, const void * data, k_timeout_
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_msgq * val; } parm0 = { .val = msgq };
 		union { uintptr_t x; const void * val; } parm1 = { .val = data };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_MSGQ_PUT);
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_MSGQ_PUT);
 	}
 #endif
 	compiler_barrier();
@@ -1198,8 +1187,8 @@ static inline int k_msgq_get(struct k_msgq * msgq, void * data, k_timeout_t time
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_msgq * val; } parm0 = { .val = msgq };
 		union { uintptr_t x; void * val; } parm1 = { .val = data };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_MSGQ_GET);
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_MSGQ_GET);
 	}
 #endif
 	compiler_barrier();
@@ -1357,12 +1346,8 @@ static inline int k_pipe_put(struct k_pipe * pipe, const void * data, size_t byt
 		union { uintptr_t x; size_t val; } parm2 = { .val = bytes_to_write };
 		union { uintptr_t x; size_t * val; } parm3 = { .val = bytes_written };
 		union { uintptr_t x; size_t val; } parm4 = { .val = min_xfer };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm5 = { .val = timeout };
-		uintptr_t more[] = {
-			parm5.split.lo,
-			parm5.split.hi
-		};
-		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, (uintptr_t) &more, K_SYSCALL_K_PIPE_PUT);
+		union { uintptr_t x; k_timeout_t val; } parm5 = { .val = timeout };
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, parm5.x, K_SYSCALL_K_PIPE_PUT);
 	}
 #endif
 	compiler_barrier();
@@ -1382,12 +1367,8 @@ static inline int k_pipe_get(struct k_pipe * pipe, void * data, size_t bytes_to_
 		union { uintptr_t x; size_t val; } parm2 = { .val = bytes_to_read };
 		union { uintptr_t x; size_t * val; } parm3 = { .val = bytes_read };
 		union { uintptr_t x; size_t val; } parm4 = { .val = min_xfer };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm5 = { .val = timeout };
-		uintptr_t more[] = {
-			parm5.split.lo,
-			parm5.split.hi
-		};
-		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, (uintptr_t) &more, K_SYSCALL_K_PIPE_GET);
+		union { uintptr_t x; k_timeout_t val; } parm5 = { .val = timeout };
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, parm5.x, K_SYSCALL_K_PIPE_GET);
 	}
 #endif
 	compiler_barrier();
@@ -1471,8 +1452,8 @@ static inline int k_pipe_write(struct k_pipe * pipe, const uint8_t * data, size_
 		union { uintptr_t x; struct k_pipe * val; } parm0 = { .val = pipe };
 		union { uintptr_t x; const uint8_t * val; } parm1 = { .val = data };
 		union { uintptr_t x; size_t val; } parm2 = { .val = len };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
-		return (int) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, K_SYSCALL_K_PIPE_WRITE);
+		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
+		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.x, parm3.x, K_SYSCALL_K_PIPE_WRITE);
 	}
 #endif
 	compiler_barrier();
@@ -1490,8 +1471,8 @@ static inline int k_pipe_read(struct k_pipe * pipe, uint8_t * data, size_t len, 
 		union { uintptr_t x; struct k_pipe * val; } parm0 = { .val = pipe };
 		union { uintptr_t x; uint8_t * val; } parm1 = { .val = data };
 		union { uintptr_t x; size_t val; } parm2 = { .val = len };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
-		return (int) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, K_SYSCALL_K_PIPE_READ);
+		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
+		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.x, parm3.x, K_SYSCALL_K_PIPE_READ);
 	}
 #endif
 	compiler_barrier();
@@ -1542,8 +1523,8 @@ static inline int k_poll(struct k_poll_event * events, int num_events, k_timeout
 	if (z_syscall_trap()) {
 		union { uintptr_t x; struct k_poll_event * val; } parm0 = { .val = events };
 		union { uintptr_t x; int val; } parm1 = { .val = num_events };
-		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, K_SYSCALL_K_POLL);
+		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_K_POLL);
 	}
 #endif
 	compiler_barrier();
